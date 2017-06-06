@@ -36,15 +36,11 @@ void join(int x, int y){
     par[rx]=ry;
 }
 
-
-
-
 bool dun[MX];
 
 int d, n, m, x, fr, to, w;
 long long dist[MX][MX];
 vector < pair< int , int > > p[MX];
-
 
 int weights[MX][MX];
 vector<int> mst_edges[MX];
@@ -76,7 +72,6 @@ int dfs(int cur, int mes){
         return 1;
     return 0;
 }
-
 
 int main()
 {
@@ -111,7 +106,6 @@ int main()
         }
         E.clear();
 
-
         memset(dist,63,sizeof(dist));
 
         for(int j : dungeon){
@@ -144,7 +138,6 @@ int main()
                 E.push_back(edge(dungeon[i], dungeon[j], dist[dungeon[i]][dungeon[j]]));
         sort(E.begin(), E.end());
 
-
         int mst=0, added=1;
         for(int j=0; j<E.size(); ++j){
             int x=E[j].from;
@@ -156,13 +149,11 @@ int main()
             join(x, y);
         }
 
-
         long long cur_ans = 2000000000;
         for(int i = 1; i < dungeon.size(); ++i){
             cur_ans = min(cur_ans, dist[1][dungeon[i]]);
 
         }
-
 
         cout<<"Case #"<<c<<": "<<cur_ans + mst<<endl;;
     }
