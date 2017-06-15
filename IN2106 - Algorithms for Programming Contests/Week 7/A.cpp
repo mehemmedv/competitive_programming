@@ -81,8 +81,6 @@ int main()
             v[++cur] = v[i];
         }
 
-
-
         cout<<"Case #"<<cc<<":";
         for(int i = 0; i < cur; ++i)
             ans[i] = v[i].idx;

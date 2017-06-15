@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Pointttt
+struct Point_2
 {
     double  x, y;
 } poly[1001000];
 
-bool calc(int lll, int rrr, Pointttt t){
+bool calc(int lll, int rrr, Point_2 t){
     double d1 = (poly[lll].x - poly[rrr].x) * (poly[lll].x - poly[rrr].x);
     d1 += (poly[lll].y - poly[rrr].y) * (poly[lll].y - poly[rrr].y);
 
@@ -23,7 +23,7 @@ bool calc(int lll, int rrr, Pointttt t){
     return false;
 }
 
-bool calc(Pointttt p, int len)
+bool calc(Point_2 p, int len)
 {
     double minx = poly[0].x;
     double maxx = poly[0].x;
@@ -31,7 +31,7 @@ bool calc(Pointttt p, int len)
     double maxy = poly[0].y;
     for (int i = 1 ; i < len ; i++)
     {
-        Pointttt q = poly[i];
+        Point_2 q = poly[i];
         minx = min(q.x, minx);
         maxx = max(q.x, maxx);
         miny = min(q.y, miny);
@@ -126,7 +126,7 @@ int main()
         for(int i = 0; i < nnn; ++i)
         {
             cin>>a>>b;
-            Pointttt temp;
+            Point_2 temp;
             temp.x = a;
             temp.y = b;
             poly[cnt++] = temp;
@@ -135,18 +135,18 @@ int main()
         }
 
 
-        Pointttt temp1;
+        Point_2 temp1;
         int say = 0;
         for(int i = 0; i <= 300; ++i)
-        for(int j = 0; j <= 300; ++j){
-            temp1.x = i;
-            temp1.y = j;
-            used[i][j] = used[i][j] | calc(temp1, cnt);
-            if(used[i][j] == true){
-                ++say;
-                v.push_back(Point(i, j));
+            for(int j = 0; j <= 300; ++j){
+                temp1.x = i;
+                temp1.y = j;
+                used[i][j] = used[i][j] | calc(temp1, cnt);
+                if(used[i][j] == true){
+                    ++say;
+                    v.push_back(Point(i, j));
+                }
             }
-        }
 
         if(v.size() < 3){
             cout<<"Case #"<<cc<<":"<<endl;

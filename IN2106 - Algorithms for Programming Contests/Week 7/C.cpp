@@ -66,16 +66,7 @@ int main()
         }
         A = Cx = Cy = 0.0;
         v[n] = v[0];
-        /*
-        for(int i = 0; i < n; ++i)
-            A += 0.5 * (v[i].x * v[i+1].y - v[i+1].x * v[i].y);
-        for(int i = 0; i < n; ++i){
-            Cx += (v[i].x + v[i+1].x) * (v[i].x * v[i+1].y - v[i+1].x * v[i].y);
-            Cy += (v[i].y + v[i+1].y) * (v[i].x * v[i+1].y - v[i+1].x * v[i].y);
-        }
-        Cx = Cx / (6.0 * A);
-        Cy = Cy / (6.0 * A);
-        cout<<Cx<<" "<<Cy<<endl;*/
+
         for(int i = 0; i < n; ++i)
             Cx += v[i].x, Cy += v[i].y;
         Cx = Cx / (1.0 * n), Cy = Cy / (1.0 * n);
