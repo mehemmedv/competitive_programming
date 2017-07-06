@@ -14,6 +14,10 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+/**
+ *
+ * @author Mahammad
+ */
 public class Main {
 
     public static class FastScanner {

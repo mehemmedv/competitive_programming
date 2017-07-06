@@ -81,7 +81,6 @@ int main()
             }
         }
 
-
         cout<<"Case #"<<c<<":";
         if(ans.size() == 0){
             cout<<" impossible"<<endl;

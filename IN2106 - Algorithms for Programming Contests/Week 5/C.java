@@ -11,10 +11,6 @@ import java.util.Scanner;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     public static int t;
     public static BigInteger n, ans;
     
@@ -29,8 +25,6 @@ public class Main {
             BigInteger r = n;
             while(l.compareTo(r) <= 0){
                 BigInteger mid = l.add(r).divide(BigInteger.valueOf(2));
-                //if(mid.longValue() == 2)
-                //    System.out.println("xaxa");
                 if(mid.multiply(mid.add(BigInteger.ONE)).multiply((mid.multiply(BigInteger.valueOf(2)).add(BigInteger.ONE))).divide(BigInteger.valueOf(6)).compareTo(n) <= 0){
                     ans = mid;
                     l = mid.add(BigInteger.ONE);

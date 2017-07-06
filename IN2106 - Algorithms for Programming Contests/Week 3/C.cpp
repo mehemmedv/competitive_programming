@@ -68,7 +68,6 @@ int main()
             }
         sort(E.begin(), E.end());
         int mst=0, added=1;
-        //for(edge i : E){
         for(int j=0; j<E.size(); j++){
             int x=E[j].from;
             int y=E[j].to;

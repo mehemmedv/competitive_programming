@@ -59,15 +59,12 @@ int main()
             for(int j = 0; j < 5; ++j)
                 nodes[i][j].clear();
         int bas = con_to_num(basx, basy);
-        //cout<<basx<<" "<<basy<<" "<<bas<<endl;
-        //cout<<sonx<<" "<<sony<<" "<<con_to_num(sonx, sony)<<endl;
         dist[bas][0]=0;
 
         set < pair < ll , int > > s;
         set < pair < ll , int > > s1;
         set < pair < ll , int > > s2;
         set < pair < ll , int > > s3;
-
 
         s.insert(make_pair(dist[bas][0],bas));
 
@@ -150,7 +147,6 @@ int main()
                 }
             }
         }
-
 
         while(!s1.empty()){
             pair < ll , int > tmp; tmp=(*s1.begin());s1.erase(s1.begin());
@@ -236,7 +232,6 @@ int main()
             }
         }
 
-
         while(!s2.empty()){
             pair < ll , int > tmp; tmp=(*s2.begin());s2.erase(s2.begin());
             pair<int, int> temp = con_to_2d(tmp.second);
@@ -321,7 +316,6 @@ int main()
             }
         }
 
-
         while(!s3.empty()){
             pair < ll , int > tmp; tmp=(*s3.begin());s3.erase(s3.begin());
             pair<int, int> temp = con_to_2d(tmp.second);
@@ -371,9 +365,6 @@ int main()
             if(ans > dist[sonnum][i])
                 idx = i, ans = dist[sonnum][i];
 
-
-
-
         cout<<"Case #"<<c<<":"<<endl;
         for(int i : nodes[sonnum][idx]){
             pair<int, int> temp = con_to_2d(i);
@@ -381,8 +372,6 @@ int main()
         }
         for(int i = idx + 1; i < 4; ++i)
             cout<<"unused"<<endl;
-        //cout<<"ANS: "<<ans<<endl;
-
     }
 
     return 0;
